@@ -1,0 +1,55 @@
+---
+title: "Plotly Presentation"
+output: 
+  html_document:
+    self_contained: true
+date: "`r Sys.Date()`"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+This presentation demonstrates the use of Plotly for creating interactive plots in R. The goal of this analysis is to showcase how we can visualize data using dynamic, interactive graphs that allow for user interaction such as zooming, panning, and hovering to see tooltips.
+
+In the following sections, we will walk through the methodology used to generate the plot, followed by a brief explanation of the results.
+
+## Methodology
+To visualize the relationship between two variables, we will use a scatter plot. The data used here consists of values for two variables: x and y. We are utilizing the plot_ly() function from the Plotly package, which is widely known for creating interactive graphs.
+
+Here’s a quick overview of the steps involved:
+
+Data preparation
+
+Plot creation using plot_ly()
+
+Customization of plot aesthetics (e.g., color, size)
+
+Interactive features for user engagement
+
+Now let’s take a look at the plot.
+
+## Plot
+
+```{r}
+library(plotly)
+
+# Create a simple plot using plot_ly
+plot <- plot_ly(
+  x = c(1, 2, 3, 4, 5),
+  y = c(10, 11, 12, 13, 14),
+  type = 'scatter',
+  mode = 'lines+markers',
+  marker = list(color = 'rgba(255, 182, 193, .9)')
+)
+
+# Show the plot
+plot
+```
+
+## Results and conclusion
+The plot above shows the relationship between the two variables. As we can see, there is a linear trend where the values of y increase as the values of x increase. This interaction can help users better understand the trends and patterns in the data.In this presentation, we demonstrated how to use Plotly to create interactive plots within an R Markdown document. The interactivity provided by Plotly allows users to engage with the data visually, which is useful for exploring relationships between variables.
+
+We hope this example serves as a helpful introduction to creating interactive data visualizations in R. You can extend this methodology for more complex data and advanced visualizations.
